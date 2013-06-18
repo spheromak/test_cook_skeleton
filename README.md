@@ -26,3 +26,6 @@ Start guard which will start TK instances and start watching yer stuff
 
 ### Hack
 start adding files and watch guard run yer kitchen!!
+
+### Thanks
+I got the idea for alot of this and most of the rakefile from miah's logstash cook
