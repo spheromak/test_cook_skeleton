@@ -15,6 +15,7 @@ platforms:
 suites:
 - name: default
   run_list:
+    - recipe[test_cook_skeleton]
   attributes: {}
 
 clusters:
