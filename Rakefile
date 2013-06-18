@@ -1,14 +1,14 @@
 #!/usr/bin/env rake
 require 'rake'
-require 'rake/testtask'
+require 'rspec/core/rake_task'
 
 task :default => 'test:quick'
 
 namespace :test do
 
-  Rake::TestTask.new do |t|
-    t.name = :rspec
-    t.test_files = Dir.glob('test/spec/**/*_spec.rb')
+  RSpec::Core::RakeTask.new(:spec) do |t|
+    t.pattern = Dir.glob('test/spec/**/*_spec.rb')
+    t.rspec_opts = "--color -f d"
   end
 
   begin
@@ -58,7 +58,7 @@ namespace :test do
   task :quick do
     Rake::Task['test:quality'].invoke
     Rake::Task['test:foodcritic'].invoke
-    Rake::Task['test:rspec'].invoke
+    Rake::Task['test:spec'].invoke
     Rake::Task['test:tailor'].invoke
   end
 

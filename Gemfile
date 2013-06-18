@@ -16,4 +16,5 @@ group "develop" do
   gem 'guard-rake'
   gem 'guard-kitchen'
   gem 'knife-cookbook-doc'
+  gem 'chefspec'
 end
